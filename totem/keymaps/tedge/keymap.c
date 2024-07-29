@@ -155,7 +155,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
              │ DEBUG   │  RESET  │         │         │         ││         │   META  │   CTRL  │   ALT   │   SFT   │   
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │   F1    │ OS SWAP │    MAKE │         │         │         ││         │         │         │         │         │   F12   │
+   │   F1    │ OS SWAP │  MAKE   │         │         │         ││         │         │         │         │         │   F12   │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │    ▼    │    ▼    │    ▼    ││    ▼    │    ▼    │    ▼    │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */ 
@@ -222,11 +222,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // │ l a y e r                                       │
 // └─────────────────────────────────────────────────┘
 
-        case COLEMAK:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_COLEMAK);
-            }
-            return false;
         case QWERTY:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_QWERTY);
