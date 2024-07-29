@@ -130,9 +130,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              ┌─────────┬─────────┬─────────┬─────────┬──────╨──┐┌──╨──────┬─────────┬─────────┬─────────┬─────────┐
      ╌┄┈┈───═╡    !    │    @    │    #    │    $    │    %    ││    ^    │    &    │    *    │    (    │    )    │   
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
-             │         │         │         │         │         ││         │    ←    │    ↓    │    ↑    │    →    │
+             │         │         │         │  FIND   │         ││         │    ←    │    ↓    │    ↑    │    →    │
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │    ~    │         │         │         │         │         ││         │         │         │         │         │         │
+   │    ~    │   UNDO  │   CUT   │   COPY  │  PASTE  │         ││         │         │         │         │         │         │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │ ADJUST  │    ▼    │    ▼    ││    ▼    │    ▼    │    ▼    │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */ 
@@ -140,8 +140,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    [_RAISE] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,   KC_CIRC,  KC_AMPR,  KC_PAST, KC_LPRN,  KC_RPRN,
-              XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,  KC_LEFT,  KC_DOWN, KC_UP,    KC_RGHT, 
-    KC_TILD,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX, 
+              XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_FIND,  XXXXXXX,   XXXXXXX,  KC_LEFT,  KC_DOWN, KC_UP,    KC_RGHT, 
+    KC_TILD,  KC_UNDO,  KC_CUT,   KC_COPY,  KC_PASTE, XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX,  XXXXXXX,  XXXXXXX, 
                                   ADJUST,   _______,  _______,   _______,  _______,  _______
  ),
  /*
@@ -203,7 +203,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-
         case OS_SWAP: 
             if (record->event.pressed) {
                 if (!keymap_config.swap_lctl_lgui) {
