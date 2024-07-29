@@ -17,24 +17,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-/* key matrix size */
-// Rows are doubled-up
-#define MATRIX_ROWS 8
-#define MATRIX_COLS 5
-
-
-// wiring of each half
-#define MATRIX_ROW_PINS { GP26, GP27, GP28, GP29 }
-#define MATRIX_COL_PINS { GP6, GP7, GP3, GP4, GP2 }
-#define DIODE_DIRECTION COL2ROW
-
-
-//#define NO_ACTION_MACRO
-//#define NO_ACTION_FUNCTION
-
-#define DEBOUNCE 5
-
-
 /* Serial settings */
 #define USE_SERIAL
 /* serial.c configuration for split keyboard */
