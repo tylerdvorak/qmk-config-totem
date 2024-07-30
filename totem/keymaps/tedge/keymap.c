@@ -51,7 +51,7 @@ enum custom_keycodes {
 
 // LEFT HAND HOME ROW MODS QWERTY ├──────────────────┐
 
-#define SHT_A MT(MOD_LSFT, KC_A)
+#define SHT_ESC MT(MOD_LSFT, KC_ESC)
 #define ALT_S MT(MOD_LALT, KC_S)
 #define CTL_D MT(MOD_LCTL, KC_D)
 #define GUI_F MT(MOD_LGUI, KC_F)
@@ -61,10 +61,11 @@ enum custom_keycodes {
 #define GUI_J MT(MOD_RGUI, KC_J)
 #define CTL_K MT(MOD_LCTL, KC_K)
 #define ALT_L MT(MOD_LALT, KC_L)
-#define SHT_S MT(MOD_LSFT, KC_SCLN)
+#define SHT_QUOTE MT(MOD_LSFT, KC_QUOTE)
 
 // LAYER SHIFT MODS
-
+#define RAISE MO(_RAISE)
+#define LOWER MO(_LOWER)
 #define ADJUST MO(_ADJUST)
  
 
@@ -86,15 +87,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
    │    ESC    │    Z    │    X    │    C    │    V    │    B    ││    N    │    M    │    ,    │    .    │    /    │   '   │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │  CTRL   │  LOWER  │  SPACE  ││  ENTER  │  BSPC   │  RAISE  │  
+                                 │  LOWER │  TAB    │  SPACE  ││  ENTER  │  BSPC   │  RAISE  │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘*/ 
 
    [_QWERTY] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,  
-              SHT_A,    ALT_S,    CTL_D,    GUI_F,    KC_G,      KC_H,     GUI_J,    CTL_K,    ALT_L,    SHT_S,    
-    KC_ESC,   KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,      KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_QUOTE,
-                                  KC_TAB,   MO_LOWER, KC_SPC,    KC_ENT,   KC_BSPC,  MO_RAISE
+              KC_A,     ALT_S,    CTL_D,    GUI_F,    KC_G,      KC_H,     GUI_J,    CTL_K,    ALT_L,    SHT_S,    
+    SHT_ESC,   KC_Z,     KC_X,    KC_C,     KC_V,     KC_B,      KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  SHT_QUOTE,
+                                  LOWER,    KC_TAB,   KC_SPC,    KC_ENT,   KC_BSPC,  RAISE
  ),
  /*
    ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
