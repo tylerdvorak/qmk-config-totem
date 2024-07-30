@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
              │    A    │    S    │    D    │    F    │    G    ││    H    │    J    │    K    │    L    │    ;    │    
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │    ESC    │    Z    │    X    │    C    │    V    │    B    ││    N    │    M    │    ,    │    .    │    /    │   '   │
+   │    ESC  │    Z    │    X    │    C    │    V    │    B    ││    N    │    M    │    ,    │    .    │    /    │   '   │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │  LOWER │  TAB    │  SPACE  ││  ENTER  │  BSPC   │  RAISE  │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘*/ 
@@ -165,7 +165,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               DB_TOGG,  QK_BOOT,  XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
      KC_F1,   OS_SWAP,  MAKE_H,   XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_F12,
                                   _______,  _______,  _______,   _______,  _______,  _______  
- )
+ ),
 /*
    ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
 
@@ -214,6 +214,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             clear_keyboard();  // ──── clear to prevent stuck keys    
             return false;
           }
+          
 
 
 // ┌─────────────────────────────────────────────────┐
@@ -230,29 +231,30 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // │ q m k                                           │
 // └─────────────────────────────────────────────────┘
 
-        case MAKE_H:
-          if (record->event.pressed) {
-            SEND_STRING ("qmk compile -kb totem -km default");
-            tap_code(KC_ENTER); 
-          } 
-          break;
+        // case MAKE_H:
+        //   if (record->event.pressed) {
+        //     SEND_STRING ("qmk compile -kb totem -km default");
+        //     tap_code(KC_ENTER); 
+        //   } 
+        //   break;
 
 // ┌─────────────────────────────────────────────────┐
 // │ p r o d u c t i v i t y                         │
 // └─────────────────────────────────────────────────┘
 
-      case SNAP:
-          if (record->event.pressed) {
-            if (keymap_config.swap_lctl_lgui) {
-              SEND_STRING(SS_LSFT(SS_LCMD(SS_LCTL("4"))));  //MAC           
-            } else {
-              SEND_STRING(SS_LSFT(SS_LWIN("S")));           //WIN
-            }
-          }
-          break;
-    }
-    return true;
-}
+//       case SNAP:
+//           if (record->event.pressed) {
+//             if (keymap_config.swap_lctl_lgui) {
+//               SEND_STRING(SS_LSFT(SS_LCMD(SS_LCTL("4"))));  //MAC           
+//             } else {
+//               SEND_STRING(SS_LSFT(SS_LWIN("S")));           //WIN
+//             }
+//           }
+//           break;
+//     }
+//     return true;
+// }
+// 
 /*
   ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
 
