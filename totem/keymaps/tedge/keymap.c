@@ -161,7 +161,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,     KC_F7  ,  KC_F8,    KC_F9,    KC_F10,   KC_F11,   
               DB_TOGG,  QK_BOOT,  XXXXXXX,  XXXXXXX,  DT_DOWN,   DT_UP,    XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
-    KC_F1,    OS_SWAP,  XXXXXXX,  XXXXXXX,  XXXXXXX,  DT_PRINT,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_F12,
+    KC_F1,    OS_SWAP,  XXXXXXX,  XXXXXXX,  XXXXXXX,  DT_PRNT,   XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_F12,
                                   _______,  _______,  _______,   _______,  _______,  _______  
  )
 /*
