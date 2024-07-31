@@ -36,12 +36,10 @@ enum totem_layers {
 // └─────────────────────────────────────────────────┘
 
 enum custom_keycodes {
-    QWERTY,
     LOWER,
     RAISE,
     ADJUST,
     OS_SWAP,
-    MAKE_H,
     SNAP
 };
 
@@ -85,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
              │    A    │    S    │    D    │    F    │    G    ││    H    │    J    │    K    │    L    │    ;    │    
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │    ESC  │    Z    │    X    │    C    │    V    │    B    ││    N    │    M    │    ,    │    .    │    /    │   '   │
+   │    ESC  │    Z    │    X    │    C    │    V    │    B    ││    N    │    M    │    ,    │    .    │    /    │    '    │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │  LOWER │  TAB    │  SPACE  ││  ENTER  │  BSPC   │  RAISE  │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘*/ 
@@ -94,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,  
               KC_A,     ALT_S,    CTL_D,    GUI_F,    KC_G,      KC_H,     GUI_J,    CTL_K,    ALT_L,    KC_S,    
-    SHT_ESC,   KC_Z,     KC_X,    KC_C,     KC_V,     KC_B,      KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  SHT_QUOTE,
+    SHT_ESC,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,      KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  SHT_QUOTE,
                                   LOWER,    KC_TAB,   KC_SPC,    KC_ENT,   KC_BSPC,  RAISE
  ),
  /*
@@ -154,7 +152,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
              │ DEBUG   │  RESET  │         │         │         ││         │   META  │   CTRL  │   ALT   │   SFT   │   
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │   F1    │ OS SWAP │  MAKE   │         │         │         ││         │         │         │         │         │   F12   │
+   │   F1    │ OS SWAP │         │         │         │         ││         │         │         │         │         │   F12   │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │    ▼    │    ▼    │    ▼    ││    ▼    │    ▼    │    ▼    │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */ 
@@ -163,9 +161,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,     KC_F7  ,  KC_F8,    KC_F9,    KC_F10,   KC_F11,   
               DB_TOGG,  QK_BOOT,  XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
-     KC_F1,   OS_SWAP,  MAKE_H,   XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_F12,
+    KC_F1,    OS_SWAP,  XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  KC_F12,
                                   _______,  _______,  _______,   _______,  _______,  _______  
- ),
+ )
 /*
    ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
 
@@ -188,10 +186,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,  _______,   _______,
     _______,  _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,  _______,   _______, _______,
                                   _______,  _______,   _______,  _______,  _______,  _______,
- ),
+ )
 */
 };
 
+// ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+// │ FIXES                                                                                                          │
+// └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+// ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
+// Set the numlock always on
+bool led_update_user(led_t led_state) {
+	if (!led_state.num_lock) {
+		tap_code(KC_NUM_LOCK);
+	}
+	return true;
+}
 
 
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -200,47 +209,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
 
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case OS_SWAP: 
-            if (record->event.pressed) {
-                if (!keymap_config.swap_lctl_lgui) {
-                  keymap_config.swap_lctl_lgui = true;  // ─── MAC
-                }
-                else {
-                  keymap_config.swap_lctl_lgui = false; // ─── WIN
-                }
-            eeconfig_update_keymap(keymap_config.raw);
-            clear_keyboard();  // ──── clear to prevent stuck keys    
-            return false;
-          }
-          
+// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+//     switch (keycode) {
+//         case OS_SWAP: 
+//             if (record->event.pressed) {
+//                 if (!keymap_config.swap_lctl_lgui) {
+//                   keymap_config.swap_lctl_lgui = true;  // ─── MAC
+//                 }
+//                 else {
+//                   keymap_config.swap_lctl_lgui = false; // ─── WIN
+//                 }
+//             eeconfig_update_keymap(keymap_config.raw);
+//             clear_keyboard();  // ──── clear to prevent stuck keys    
+//             return false;
+//             }
 
-
-// ┌─────────────────────────────────────────────────┐
-// │ l a y e r                                       │
-// └─────────────────────────────────────────────────┘
-
-        case QWERTY:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_QWERTY);
-            }
-            return false;
-
-// ┌─────────────────────────────────────────────────┐
-// │ q m k                                           │
-// └─────────────────────────────────────────────────┘
-
-        // case MAKE_H:
-        //   if (record->event.pressed) {
-        //     SEND_STRING ("qmk compile -kb totem -km default");
-        //     tap_code(KC_ENTER); 
-        //   } 
-        //   break;
-
-// ┌─────────────────────────────────────────────────┐
-// │ p r o d u c t i v i t y                         │
-// └─────────────────────────────────────────────────┘
+// // ┌─────────────────────────────────────────────────┐
+// // │ p r o d u c t i v i t y                         │
+// // └─────────────────────────────────────────────────┘
 
 //       case SNAP:
 //           if (record->event.pressed) {
@@ -254,7 +240,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 //     }
 //     return true;
 // }
-// 
 /*
   ╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸
 
