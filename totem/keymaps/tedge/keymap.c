@@ -91,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    [_QWERTY] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,  
-              KC_A,     ALT_S,    CTL_D,    GUI_F,    KC_G,      KC_H,     GUI_J,    CTL_K,    ALT_L,    KC_S,    
+              KC_A,     ALT_S,    CTL_D,    GUI_F,    KC_G,      KC_H,     GUI_J,    CTL_K,    ALT_L,    KC_SCLN,    
     SHT_ESC,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,      KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  SHT_QUOTE,
                                   LOWER,    KC_TAB,   KC_SPC,    KC_ENT,   KC_BSPC,  RAISE
  ),
@@ -106,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
              │  HOME   │    ←    │    ↓    │    →    │    [    ││    ]    │    4    │    5    │    6    │    -    │    
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │ SCRNSHT │   END   │   PG↑   │         │   PG↓   │    (    ││    )    │    1    │    2    │    3    │    *    │    =    │
+   │  SHIFT  │   END   │   PG↑   │         │   PG↓   │    (    ││    )    │    1    │    2    │    3    │    *    │    =    │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │    ▼    │    ▼    │    ▼    ││    ▼    │    ▼    │    0    │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */ 
@@ -115,7 +115,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               XXXXXXX,  XXXXXXX,   KC_UP,    KC_EQL,   KC_LCBR,   KC_RCBR,  KC_P7,    KC_P8,    KC_P9,    KC_PPLS,
               KC_QUOT,  KC_LEFT,   KC_DOWN,  KC_RGHT,  KC_LBRC,   KC_RBRC,  KC_P4,    KC_P5,    KC_P6,    KC_MINS,  
-    SNAP,     KC_END,   KC_PGUP,   XXXXXXX,  KC_PGDN,  KC_LPRN,   KC_RPRN,  KC_P1,    KC_P2,    KC_P3,    KC_PAST,  KC_PEQL,
+    KC_LSFT,  KC_END,   KC_PGUP,   XXXXXXX,  KC_PGDN,  KC_LPRN,   KC_RPRN,  KC_P1,    KC_P2,    KC_P3,    KC_PAST,  KC_PEQL,
                                   _______,  _______,  _______,   _______,  _______,   KC_P0
  ),
  /*
