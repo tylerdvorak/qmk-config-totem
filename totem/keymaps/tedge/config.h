@@ -9,7 +9,8 @@ for more options.
 // #define MASTER_RIGHT
 
 //#define TAPPING_TERM 170
-#define TAPPING_TERM 200
+#define TAPPING_TERM 250
+#define TAPPING_TERM_PER_KEY
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define TAPPING_FORCE_HOLD
@@ -22,4 +23,3 @@ for more options.
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
 #define NO_ACTION_ONESHOT
-
