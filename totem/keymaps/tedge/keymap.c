@@ -49,7 +49,7 @@ enum custom_keycodes {
 
 // LEFT HAND HOME ROW MODS QWERTY ├──────────────────┐
 
-#define SHT_ESC MT(MOD_LSFT, KC_ESC)
+// #define SHT_ESC MT(MOD_LSFT, KC_ESC)
 #define ALT_S MT(MOD_LALT, KC_S)
 #define CTL_D MT(MOD_LCTL, KC_D)
 #define GUI_F MT(MOD_LGUI, KC_F)
@@ -59,13 +59,29 @@ enum custom_keycodes {
 #define GUI_J MT(MOD_RGUI, KC_J)
 #define CTL_K MT(MOD_LCTL, KC_K)
 #define ALT_L MT(MOD_LALT, KC_L)
-#define SHT_QUOTE MT(MOD_LSFT, KC_QUOTE)
+// #define SHT_QUOTE MT(MOD_LSFT, KC_QUOTE)
 
 // LAYER SHIFT MODS
 #define RAISE MO(_RAISE)
 #define LOWER MO(_LOWER)
 #define ADJUST MO(_ADJUST)
- 
+
+// ┌─────────────────────────────────────────────────┐
+// │ d e f i n e   t a p d a n c e                   │
+// └─────────────────────────────────────────────────┘
+
+enum {
+    TD_SFT_ESC,
+    TD_SFT_QUOTE
+};
+
+// Tap Dance definitions
+tap_dance_action_t tap_dance_actions[] = {
+    // Tap once for Shift, twice for Escape
+    [TD_SFT_ESC] = ACTION_TAP_DANCE_DOUBLE(MOD_LSFT, KC_ESC),
+    [TD_SFT_QUOTE] = ACTION_TAP_DANCE_DOUBLE(MOD_RSFT, KC_QUOTE),
+};
+
 
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ K E Y M A P S                                                                                                          │
@@ -92,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,  
               KC_A,     ALT_S,    CTL_D,    GUI_F,    KC_G,      KC_H,     GUI_J,    CTL_K,    ALT_L,    KC_SCLN,    
-    SHT_ESC,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,      KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  SHT_QUOTE,
+  TD_SFT_ESC, KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,      KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  TD_SFT_QUOTE,
                                   LOWER,    KC_TAB,   KC_SPC,    KC_ENT,   KC_BSPC,  RAISE
  ),
  /*
@@ -204,20 +220,20 @@ bool led_update_user(led_t led_state) {
 }
 
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-// │ TAPPING TERMS                                                                                                          │
+// │ TAPPING TERM MODIFICATIONS                                                                                             │
 // └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 // ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
 
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case SHT_ESC:
-            return TAPPING_TERM ; - 100
-        case SHT_QUOTE:
-            return TAPPING_TERM ; - 100
-        default:
-            return TAPPING_TERM;
-    }
-}
+// uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+//     switch (keycode) {
+//         case SHT_ESC:
+//             return TAPPING_TERM ; - 100
+//         case SHT_QUOTE:
+//             return TAPPING_TERM ; - 100
+//         default:
+//             return TAPPING_TERM;
+//     }
+// }
 
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ M A C R O S                                                                                                            │
