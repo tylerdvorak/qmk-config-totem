@@ -40,7 +40,8 @@ enum custom_keycodes {
     RAISE,
     ADJUST,
     OS_SWAP,
-    SNAP
+    KC_SNP,
+    KC_SNPCP
 };
 
 // ┌─────────────────────────────────────────────────┐
@@ -66,6 +67,9 @@ enum custom_keycodes {
 #define LOWER MO(_LOWER)
 #define ADJUST MO(_ADJUST)
 
+// HOTKEYS
+#define KC_SNP LGUI(LSFT(KC_4))        // Capture portion of screen
+#define KC_SNPCP LGUI(LSFT(LCTL(KC_4)))  // Copy portion of screen
 // ┌─────────────────────────────────────────────────┐
 // │ d e f i n e   t a p d a n c e                   │
 // └─────────────────────────────────────────────────┘
@@ -118,20 +122,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    │ l o w e r                                       │      ╭╮╭╮╭╮╭╮
    └─────────────────────────────────────────────────┘      │╰╯╰╯╰╯│
              ┌─────────┬─────────┬─────────┬─────────┬──────╨──┐┌──╨──────┬─────────┬─────────┬─────────┬─────────┐
-     ╌┄┈┈───═╡         │         │    ↑    │    =    │    {    ││    }    │    7    │    8    │    9    │    +    │   
+     ╌┄┈┈───═╡  SNIP   │         │    ↑    │    =    │    {    ││    }    │    7    │    8    │    9    │    +    │   
              ├─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┤
              │  HOME   │    ←    │    ↓    │    →    │    [    ││    ]    │    4    │    5    │    6    │    -    │    
    ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │  SHIFT  │   END   │   PG↑   │         │   PG↓   │    (    ││    )    │    1    │    2    │    3    │    *    │    =    │
+   │SNIP COPY│   END   │   PG↑   │         │   PG↓   │    (    ││    )    │    1    │    2    │    3    │    *    │    =    │
    └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┤├─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
                                  │    ▼    │    ▼    │    ▼    ││    ▼    │    ▼    │    0    │  
                                  └─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┘ */ 
 
    [_LOWER] = LAYOUT(
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
-              XXXXXXX,  XXXXXXX,   KC_UP,    KC_EQL,   KC_LCBR,   KC_RCBR,  KC_P7,    KC_P8,    KC_P9,    KC_PPLS,
+              KC_SNP,   XXXXXXX,   KC_UP,    KC_EQL,   KC_LCBR,   KC_RCBR,  KC_P7,    KC_P8,    KC_P9,    KC_PPLS,
               KC_QUOT,  KC_LEFT,   KC_DOWN,  KC_RGHT,  KC_LBRC,   KC_RBRC,  KC_P4,    KC_P5,    KC_P6,    KC_MINS,  
-    KC_LSFT,  KC_END,   KC_PGUP,   XXXXXXX,  KC_PGDN,  KC_LPRN,   KC_RPRN,  KC_P1,    KC_P2,    KC_P3,    KC_PAST,  KC_PEQL,
+   KC_SNPCP,  KC_END,   KC_PGUP,   XXXXXXX,  KC_PGDN,  KC_LPRN,   KC_RPRN,  KC_P1,    KC_P2,    KC_P3,    KC_PAST,  KC_PEQL,
                                   _______,  _______,  _______,   _______,  _______,   KC_P0
  ),
  /*
