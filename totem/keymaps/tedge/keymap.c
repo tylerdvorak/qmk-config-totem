@@ -75,15 +75,15 @@ enum custom_keycodes {
 // └─────────────────────────────────────────────────┘
 
 enum {
-    TD_SFT_ESC,
-    TD_SFT_QUOTE
+    TD_ESC,
+    TD_QUOTE
 };
 
 // Tap Dance definitions
 tap_dance_action_t tap_dance_actions[] = {
     // Tap once for Shift, twice for Escape
-    [TD_SFT_ESC] = ACTION_TAP_DANCE_DOUBLE(MOD_LSFT, KC_ESC),
-    [TD_SFT_QUOTE] = ACTION_TAP_DANCE_DOUBLE(MOD_RSFT, KC_QUOTE),
+    [TD_ESC] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_ESC),
+    [TD_QUOTE] = ACTION_TAP_DANCE_DOUBLE(KC_RSFT, KC_QUOTE),
 };
 
 
@@ -112,7 +112,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  //╷         ╷         ╷         ╷         ╷         ╷         ╷╷         ╷         ╷         ╷         ╷         ╷         ╷
               KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,      KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,  
               KC_A,     ALT_S,    CTL_D,    GUI_F,    KC_G,      KC_H,     GUI_J,    CTL_K,    ALT_L,    KC_SCLN,    
-  TD_SFT_ESC, KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,      KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  TD_SFT_QUOTE,
+TD(TD_ESC)   ,KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,      KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  TD(TD_QUOTE),
                                   LOWER,    KC_TAB,   KC_SPC,    KC_ENT,   KC_BSPC,  RAISE
  ),
  /*
